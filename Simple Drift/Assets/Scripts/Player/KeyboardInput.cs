@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class KeyboardInput : MonoBehaviour
 {
     [SerializeField] private bool _onMenu;
@@ -20,6 +21,7 @@ public class KeyboardInput : MonoBehaviour
         else
             CyclicMovement();
     }
+
     private void FixedUpdate()
     {
         _movement.Move(new Vector3(_horizontal, 0, 0));

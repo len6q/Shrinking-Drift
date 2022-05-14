@@ -12,10 +12,7 @@ public class Planet : MonoBehaviour
 
     private static Transform _planet;
 
-    private void Awake()
-    {
-        _planet = transform;
-    }
+    private void Awake() => _planet = transform;
 
     private void Update()
     {

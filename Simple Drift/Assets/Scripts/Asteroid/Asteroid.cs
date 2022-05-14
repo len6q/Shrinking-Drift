@@ -23,7 +23,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_onPlace && collision.collider.tag == "Planet")
+        if(!_onPlace && collision.gameObject.GetComponent<Planet>() != null)
         {
             _onPlace = true;
 

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Asteroid")
+        if(collision.gameObject.GetComponent<Asteroid>() != null)
         {
             Quaternion rotation = Quaternion.LookRotation(transform.position.normalized);
             rotation *= Quaternion.Euler(90f, 0f, 0f);

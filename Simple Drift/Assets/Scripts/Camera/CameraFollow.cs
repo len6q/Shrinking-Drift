@@ -9,10 +9,14 @@ public class CameraFollow : MonoBehaviour
 
 	private Vector3 _velocity = Vector3.zero;
 
+    private void Update()
+    {
+		if (_target == null)
+			Destroy(this);
+	}
+
     private void FixedUpdate()
 	{
-		if (_target == null) return;
-
 		Vector3 targetPosition = _target.TransformDirection(_offset);
 		transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, _smoothness);
 
