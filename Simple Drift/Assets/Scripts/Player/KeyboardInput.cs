@@ -22,10 +22,7 @@ public class KeyboardInput : MonoBehaviour
             CyclicMovement();
     }
 
-    private void FixedUpdate()
-    {
-        _movement.Move(new Vector3(_horizontal, 0, 0));
-    }
+    private void FixedUpdate() => _movement.Move(new Vector3(_horizontal, 0, 0));
 
     private void CyclicMovement()
     {

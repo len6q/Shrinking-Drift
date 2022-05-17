@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    public static float ShrinkSpeed = .02f;
+    public static float ShrinkSpeed 
+    {
+        get { return .02f; }
+        private set { }
+    } 
 
     public static float Score
     {
@@ -14,8 +18,6 @@ public class Planet : MonoBehaviour
 
     private void Awake() => _planet = transform;
 
-    private void Update()
-    {
-        transform.localScale *= 1f - ShrinkSpeed * Time.deltaTime;
-    }
+    private void Update() => transform.localScale *= 1f - ShrinkSpeed * Time.deltaTime;
+
 }
