@@ -9,7 +9,7 @@ public class StartGameUI : MonoBehaviour
 
     private void Start()
     {
-        _bestScore.text = "R = " + PlayerSettings.GetBestScore().ToString("0.00") + "m";
+        _bestScore.text = "R = " + PlayerSettings.BestScore.ToString("0.00") + "m";
         _gameName.text = "Shrinking Drift";
         _startText.text = "press \"Space\" to start";
     }

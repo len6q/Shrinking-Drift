@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ParticleSystem))]
 public class Asteroid : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _explosion;
@@ -23,7 +24,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!_onPlace && collision.gameObject.GetComponent<Planet>() != null)
+        if(!_onPlace && collision.gameObject.TryGetComponent(out Planet planet))
         {
             _onPlace = true;
 

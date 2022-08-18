@@ -8,7 +8,7 @@ public class Planet : MonoBehaviour
         private set { }
     } 
 
-    public static float Score
+    public static float Scale
     {
         get { return _planet.localScale.x; }
         private set { }

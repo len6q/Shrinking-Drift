@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Text))]
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private Player _car;
@@ -30,7 +31,7 @@ public class GameOverUI : MonoBehaviour
 
     private void ShowGameOverText()
     {
-        PlayerSettings.SetBestScore(Planet.Score);
+        PlayerSettings.BestScore = Planet.Scale;
 
         _gameOverText.gameObject.SetActive(true);
         _gameOverText.text = "press \"Space\" to start";
