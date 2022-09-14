@@ -3,24 +3,26 @@ using System.Collections;
 
 public class AsteroidsSpawner : MonoBehaviour
 {
+    [SerializeField] private AsteroidsPool _asteroidsPool;
     [SerializeField] private Asteroid _spawnedPrefab;
     [SerializeField] private float _waitSecondsBeforeSpawn = 5f;
     [SerializeField] private float _distanceSpawn = 60f;
-    [SerializeField] private Transform _garbageCollector;
 
-    private void Start() => StartCoroutine(SpawnAsteroid());
+    private void Start()
+    {
+        _asteroidsPool.CreatePool();
+
+        StartCoroutine(SpawnAsteroid());
+    }
 
     private IEnumerator SpawnAsteroid()
     {
         while (true)
         {      
-            Vector3 position = Random.onUnitSphere * _distanceSpawn;
-            Asteroid asteroid = Instantiate(_spawnedPrefab, position, Quaternion.identity);
-            asteroid.transform.parent = _garbageCollector;
+            Vector3 position = Random.onUnitSphere * _distanceSpawn;            
+            _asteroidsPool.GetPooledAsteroid(position, Quaternion.identity);            
 
             yield return new WaitForSeconds(_waitSecondsBeforeSpawn);
-        }
-        
+        }        
     }
-
 }

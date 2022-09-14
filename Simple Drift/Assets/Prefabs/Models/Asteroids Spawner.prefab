@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &856407781861072661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856407781861072667}
+  - component: {fileID: 856407781861072660}
+  - component: {fileID: 856407781861072666}
+  m_Layer: 0
+  m_Name: Asteroids Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856407781861072667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856407781861072661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &856407781861072660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856407781861072661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f816b4357833fd749a35e51636d60af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _asteroidsPool: {fileID: 856407781861072666}
+  _spawnedPrefab: {fileID: 4701801834966562870, guid: 3661114aebcfc8943b3ba18e71764c98, type: 3}
+  _waitSecondsBeforeSpawn: 1
+  _distanceSpawn: 50
+--- !u!114 &856407781861072666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856407781861072661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751dc92e5ecf21b4a83bae6e40e4e357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _asteroidToPool: {fileID: 4701801834966562870, guid: 3661114aebcfc8943b3ba18e71764c98, type: 3}
+  _amountToPool: 30
+  _garbageCollector: {fileID: 856407781861072667}
