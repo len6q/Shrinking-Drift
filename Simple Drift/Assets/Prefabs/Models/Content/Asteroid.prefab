@@ -4994,7 +4994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef713a387b188b14b87486db69242194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosion: {fileID: 3769744275581021709, guid: e952dc6a55852804cacbb48934ce1bf4, type: 3}
+  _explosionsPool: {fileID: 3134265896809598096, guid: c7b32db0efbf0074eb47c69550dc43dc, type: 3}
+  _explosion: {fileID: -6105061456855857975, guid: e952dc6a55852804cacbb48934ce1bf4, type: 3}
   _trail: {fileID: 3502191895192075280}
 --- !u!114 &5283313091443484413
 MonoBehaviour:

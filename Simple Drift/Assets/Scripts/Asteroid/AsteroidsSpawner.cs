@@ -3,15 +3,12 @@ using System.Collections;
 
 public class AsteroidsSpawner : MonoBehaviour
 {
-    [SerializeField] private AsteroidsPool _asteroidsPool;
-    [SerializeField] private Asteroid _spawnedPrefab;
+    [SerializeField] private AsteroidsPool _asteroidsPool;    
     [SerializeField] private float _waitSecondsBeforeSpawn = 5f;
     [SerializeField] private float _distanceSpawn = 60f;
 
     private void Start()
     {
-        _asteroidsPool.CreatePool();
-
         StartCoroutine(SpawnAsteroid());
     }
 

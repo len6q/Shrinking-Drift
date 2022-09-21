@@ -1,9 +1,11 @@
 using UnityEngine;
+using System;
 
 public class Asteroid : MonoBehaviour
-{
-    [SerializeField] private ParticleSystem _explosion;
+{   
     [SerializeField] private ParticleSystem _trail;
+
+    public static event Action<Vector3, Quaternion> OnFellGround;
 
     private void Update()
     {
@@ -18,12 +20,12 @@ public class Asteroid : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.TryGetComponent(out Planet planet))
-        {
+        {            
+            StartTrailAnimation(false);
+            
             Quaternion rotation = Quaternion.LookRotation(transform.position.normalized);
             rotation *= Quaternion.Euler(90f, 0f, 0f);
-            Instantiate(_explosion, collision.contacts[0].point, rotation);
-
-            StartTrailAnimation(false);       
+            OnFellGround?.Invoke(collision.contacts[0].point, rotation);                           
         }
 	}
 
