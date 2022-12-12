@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,9 +17,20 @@ public class StartGameUI : MonoBehaviour, IPointerClickHandler
         else
         {
             _bestScore.text = "R = " + PlayerSettings.Instance.PlayerDate.BestScore.ToString("0.00") + "m";
-        }        
+        }
 
-        _startText.text = "press \"Space\" to start";
+        switch (PlayerSettings.Instance.GetLanguage())
+        {
+            case "ru":
+                _startText.text = "Õ¿∆Ã», ◊“Œ¡€ Õ¿◊¿“‹";
+                break;
+            case "en":
+                _startText.text = "CLICK TO START";
+                break;
+            default:
+                _startText.text = "CLICK TO START";
+                break;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
