@@ -1,18 +1,17 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
-public class GameOverUI : MonoBehaviour
+public class GameOverUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Player _car;
-    
-    private Text _gameOverText;
+    [SerializeField] private Joystick _joystick;
+    [SerializeField] private Text _gameOverText;
 
     private void Start()
-    {
-        _gameOverText = GetComponent<Text>();
-        _gameOverText.gameObject.SetActive(false);
-        _car.OnDead += ShowGameOverText;        
+    {                
+        _car.OnDead += ShowGameOverText;
+        gameObject.SetActive(false);
     }
 
     private void OnDestroy()
@@ -20,21 +19,38 @@ public class GameOverUI : MonoBehaviour
         _car.OnDead -= ShowGameOverText;
     }
 
-    private void Update()
+    public void QuitMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SceneLoader.Instance.LoadMain();
+        PlayerSettings.Instance.PlayerDate.PlayCount++;
+        if(PlayerSettings.Instance.PlayerDate.PlayCount % 2 == 0)
+        {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SceneLoader.Instance.LoadMenu();            
+        }
+
+        SceneLoader.Instance.LoadMenu();
     }
 
     private void ShowGameOverText()
     {
-        PlayerSettings.BestScore = Planet.Scale;
+        _joystick.gameObject.SetActive(false);
+        
+        if(Planet.Scale < PlayerSettings.Instance.PlayerDate.BestScore)
+        {
+            PlayerSettings.Instance.PlayerDate.BestScore = Planet.Scale;
+        }        
 
-        _gameOverText.gameObject.SetActive(true);
+        gameObject.SetActive(true);
         _gameOverText.text = "press \"Space\" to start";
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        PlayerSettings.Instance.PlayerDate.PlayCount++;
+        if (PlayerSettings.Instance.PlayerDate.PlayCount % 2 == 0)
+        {
+
+        }
+
+        SceneLoader.Instance.LoadMain();
+    }
 }

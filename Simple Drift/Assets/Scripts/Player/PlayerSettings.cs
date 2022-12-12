@@ -1,17 +1,26 @@
 using UnityEngine;
+using System;
 
-public class PlayerSettings
+[Serializable]
+public class PlayerDate
 {
-    public static float BestScore
-    {
-        get => PlayerPrefs.GetFloat("BestScore");        
-        set
-        {
-            if (!PlayerPrefs.HasKey("BestScore"))
-                PlayerPrefs.SetFloat("BestScore", float.MaxValue);
+    public float BestScore = float.MaxValue;
 
-            if (value < BestScore)
-                PlayerPrefs.SetFloat("BestScore", value);
+    public int PlayCount = 1;
+}
+
+public class PlayerSettings : MonoBehaviour
+{
+    public PlayerDate PlayerDate;
+
+    public static PlayerSettings Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

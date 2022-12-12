@@ -1,25 +1,28 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class StartGameUI : MonoBehaviour
+public class StartGameUI : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Text _bestScore;
-    [SerializeField] private Text _gameName;
+    [SerializeField] private Text _bestScore;    
     [SerializeField] private Text _startText;
 
     private void Start()
     {
-        _bestScore.text = "R = " + PlayerSettings.BestScore.ToString("0.00") + "m";
-        _gameName.text = "Shrinking Drift";
+        if(PlayerSettings.Instance.PlayerDate.BestScore == float.MaxValue)
+        {
+            _bestScore.text = "R = " + 0 + "m";
+        }
+        else
+        {
+            _bestScore.text = "R = " + PlayerSettings.Instance.PlayerDate.BestScore.ToString("0.00") + "m";
+        }        
+
         _startText.text = "press \"Space\" to start";
     }
 
-    private void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SceneLoader.Instance.LoadMain();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        SceneLoader.Instance.LoadMain();
     }
 }
