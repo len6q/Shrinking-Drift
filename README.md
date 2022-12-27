@@ -1,4 +1,5 @@
 # Shrinking Drift Prototype
+[Видео геймплея](https://youtu.be/6HNuL0WpViU)
 ## IDEA
 You drive on a gradually shrinking planet, dodging asteroids</br>
 **Your task is to stay alive as long as possible**
@@ -8,6 +9,3 @@ ___
 ___
 ## CONTROL
 Control with the A/D keys or left/right arrow keys
-
-___
-*There is no sound in the game*
