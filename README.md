@@ -1,5 +1,5 @@
 # Shrinking Drift Prototype
-[Видео геймплея](https://youtu.be/6HNuL0WpViU)
+[_Видео геймплея_](https://youtu.be/6HNuL0WpViU)
 ## IDEA
 You drive on a gradually shrinking planet, dodging asteroids</br>
 **Your task is to stay alive as long as possible**
