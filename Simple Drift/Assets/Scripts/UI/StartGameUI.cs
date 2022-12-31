@@ -1,5 +1,4 @@
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -7,6 +6,7 @@ public class StartGameUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Text _bestScore;    
     [SerializeField] private Text _startText;
+    [SerializeField] private Text _gameName;
 
     private void Start()
     {
@@ -22,13 +22,20 @@ public class StartGameUI : MonoBehaviour, IPointerClickHandler
         switch (PlayerSettings.Instance.GetLanguage())
         {
             case "ru":
-                _startText.text = "�����, ����� ������";
+                _startText.text = "НАЖМИ, ЧТОБЫ НАЧАТЬ";
+                _gameName.text = "ПРОСТОЙ ДРИФТ";
                 break;
             case "en":
                 _startText.text = "CLICK TO START";
+                _gameName.text = "SIMPLE DRIFT";
+                break;
+            case "tr":
+                _startText.text = "BAŞLAMAK İÇİN TIKLA";
+                _gameName.text = "BASİT SÜRÜKLENME";
                 break;
             default:
                 _startText.text = "CLICK TO START";
+                _gameName.text = "SIMPLE DRIFT";
                 break;
         }
     }

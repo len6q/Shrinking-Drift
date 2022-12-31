@@ -186,12 +186,21 @@ PrefabInstance:
       propertyPath: _inMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 932039744384173061, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 239897902}
     - target: {fileID: 932039744384173070, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
       propertyPath: m_Name
       value: Small Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+--- !u!82 &239897902 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1118633333, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+  m_PrefabInstance: {fileID: 239897901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &471801213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -750,7 +759,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SHRINKING DRIFT
+  m_Text: "BAS\u0130T S\xDCR\xDCKLENME"
 --- !u!114 &1081741724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bestScore: {fileID: 566419382}
   _startText: {fileID: 1305998841}
+  _gameName: {fileID: 1081741723}
 --- !u!114 &1974133897
 MonoBehaviour:
   m_ObjectHideFlags: 0

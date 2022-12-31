@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+Ôªøusing System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -54,10 +54,13 @@ public class GameOverUI : MonoBehaviour, IPointerClickHandler
         switch (PlayerSettings.Instance.GetLanguage())
         {
             case "ru":
-                _gameOverText.text = "Õ¿∆Ã», ◊“Œ¡€ Õ¿◊¿“‹";
+                _gameOverText.text = "–ù–ê–ñ–ú–ò, –ß–¢–û–ë–´ –ù–ê–ß–ê–¢–¨";
                 break;
             case "en":
                 _gameOverText.text = "CLICK TO START";
+                break;
+            case "tr":
+                _gameOverText.text = "BA≈ûLAMAK ƒ∞√áƒ∞N TIKLA";
                 break;
             default:
                 _gameOverText.text = "CLICK TO START";

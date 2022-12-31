@@ -29,16 +29,14 @@
 			console.log('Yandex SDK initialized');
 			window.ysdk = ysdk;
 			initPlayer();
-			initLb();
-			console.log("Done!");
+			initLb();			
 		});
 		
 		var player;
 
 		function initPlayer(){
 			ysdk.getPlayer({ scopes: false}).then(_player => {
-				player = _player;
-				console.log("Player init");
+				player = _player;				
 				}).catch(err => {
 				// Ошибка при инициализации объекта Player.
 			});
@@ -118,13 +116,12 @@
 
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = window.innerHeight + 'px';
-
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+		
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.width = 9;
+        canvas.style.height = 16;
       }
 
       loadingBar.style.display = "block";

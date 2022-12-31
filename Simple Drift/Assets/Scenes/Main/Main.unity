@@ -1473,12 +1473,21 @@ PrefabInstance:
       propertyPath: _attractor
       value: 
       objectReference: {fileID: 1339865859}
+    - target: {fileID: 932039744384173061, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 932039744343895017}
     - target: {fileID: 932039744384173070, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
       propertyPath: m_Name
       value: Small Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+--- !u!82 &932039744343895017 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1118633333, guid: 907320a344144af4ba3ee429088da1f7, type: 3}
+  m_PrefabInstance: {fileID: 932039744343895016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4557475878279319369
 PrefabInstance:
   m_ObjectHideFlags: 0

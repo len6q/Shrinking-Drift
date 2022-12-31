@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _explosion;
-    [SerializeField] private bool _inMenu;
+    [SerializeField] private bool _inMenu;   
 
     public event Action OnDead;    
 
